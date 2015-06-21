@@ -1,0 +1,54 @@
+@import url(//fonts.googleapis.com/css?family=Exo+2);
+@import url(//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+@import url(//fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+@import url(//fonts.googleapis.com/css?family=Comfortaa:400,300,700);
+
+body { 
+  font-family: 'Droid Serif';
+  color: #333;
+}
+h1, h2, h3 {
+  font-family: 'Comfortaa';
+  font-weight: normal;
+  color: #008CBD;
+}
+.remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+
+.inverse {
+  background: #008CBD;
+  color: #333;
+}
+.inverse h1, .inverse h2 {
+  color: #fff;
+  line-height: 1em;
+}
+
+a {
+  color: #662D91;
+  text-decoration: none;
+}
+
+li {
+  line-height: 2em;
+}
+
+/* Two-column layout */
+.left-column {
+  color: #777;
+  width: 20%;
+  height: 92%;
+  float: left;
+}
+  .left-column h2:last-of-type, .left-column h3:last-child {
+    font-weight: bold;
+  }
+.right-column {
+  width: 75%;
+  float: right;
+  padding-top: 1em;
+}
+
+/* Image sizing */
+.image-200 {
+  width: 200%;
+}
