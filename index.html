@@ -322,6 +322,33 @@ $.getJSON(API_ENDPOINT
     console.log("Results:");
     console.log(result);
     console.log("Status: " + status);
+});```
+---
+## Viewing results in the console
+![:scale 95%](images/eventbrite-console-log.png)
+---
+# Set Up Map
+```js
+var map = L.map('map', {
+  attributionControl: false,
+  center: new L.LatLng(33.75, -84.392), 
+  zoom: 15
+});
+L.control.attribution({position: 'bottomleft'}).addTo(map);
+
+L.tileLayer('http://otile4.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png', {
+  attribution: 
+  'Made at <a href="http://www.codeforamerica.org/events/codeacross-2015/">CodeAcross</a> for <a href="http://www.codeforatlanta.org/">Code for Atlanta</a>' +
+  '<br>Tiles &copy; <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png" />',
+  maxZoom: 18
+}).addTo(map);```
+---
+# Map Points
+```js
+var eventbriteLayer = L.layerGroup();
+
+$.getJSON(API_ENDPOINT
+  .replace('EB_TOKEN', EB_TOKEN), function(result, status) {
 
     if (status !== 'success') return alert('Request to Eventbrite failed');
 
@@ -342,9 +369,6 @@ $.getJSON(API_ENDPOINT
       .addTo(map);
     }
 });```
----
-## Viewing results in the console
-![:scale 95%](images/eventbrite-console-log.png)
 ---
 name: inverse
 layout: true
@@ -399,6 +423,48 @@ if let url = NSURL(string: requestString) {
             }            
         }        
     }    
+}
+```
+---
+# Mapping the Locations
+```swift
+func mapView(mapView: RMMapView!, layerForAnnotation annotation: RMAnnotation!) -> RMMapLayer! {
+    
+    var markerImage = "restaurant"
+    var markerSize = "small"
+    var markerColor = greenColor
+    
+    switch annotation.userInfo.objectForKey("Type") as String {
+        
+    case "Eating":
+        markerImage = "restaurant"
+        markerColor = yellowColor
+        foodAnnotations.append(annotation)
+    ...
+    }
+    
+    switch annotation.userInfo.objectForKey("Count") as String {
+        
+    case "1":
+        markerSize = "small"
+    ...
+        
+    }
+```
+---
+# Mapping the Locations
+```swift
+    // marker and callout
+    var lunchMarker = RMMarker(mapboxMarkerImage: markerImage, tintColorHex: markerColor, sizeString: markerSize)
+    lunchMarker.canShowCallout = true
+    
+    var rightArrowButton = ArrowButton(frame: CGRectMake(0, 0, 28, 44))
+    rightArrowButton.strokeColor = greenUIColor
+    
+    lunchMarker.rightCalloutAccessoryView = rightArrowButton
+
+    return lunchMarker
+
 }
 ```
 ---

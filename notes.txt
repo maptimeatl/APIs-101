@@ -17,3 +17,4 @@ Eventbrite example:
 
 To Do:
 * More about what gets returned
+* More about actually displaying the data
