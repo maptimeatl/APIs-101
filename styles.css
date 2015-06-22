@@ -32,6 +32,10 @@ li {
   line-height: 2em;
 }
 
+.small-li {
+  line-height: -2em;
+}
+
 /* Two-column layout */
 .left-column {
   color: #777;

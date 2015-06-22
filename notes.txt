@@ -1,0 +1,19 @@
+What is Maptime?
+	Say that we are super casual, so feel free to interject with questions or knowledge
+
+API list:
+	Ask for people's favorites
+	Ask for sites people would like to use as data sources, but don't know if they have an API or not, then look them up
+
+Complete Queries:
+	What endpoints and queries are available depend on the API
+
+Eventbrite example:
+	Do I need pagination? It seems like I'm only getting one page
+	Take out south downtown shape for this layer
+
+
+
+
+To Do:
+* More about what gets returned
